@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Submit Review</title>
+</head>
+<body>
+<h1>Submit a Movie Review</h1>
+<form th:action="@{/reviews}" th:object="${review}" method="post">
+    <p>User ID: <input type="text" name="userId" th:field="*{user.id}" required /></p>
+    <p>Movie ID: <input type="text" name="movieId" th:field="*{movieId}" required /></p>
+    <p>Rating: <input type="number" name="rating" th:field="*{rating}" required /></p>
+    <p>Review Content: <textarea name="reviewContent" th:field="*{reviewContent}" required></textarea></p>
+    <p><input type="submit" value="Submit Review" /></p>
+</form>
+<div>
+    <ul th:each="user : ${users}">
+        <li th:text="${user.username}"></li>
+    </ul>
+</div>
+<a href="/">Back to Home</a>
+</body>
+</html>

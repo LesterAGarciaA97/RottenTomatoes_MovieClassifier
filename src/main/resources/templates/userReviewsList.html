@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Reviews List</title>
+</head>
+<body>
+<h1>List of Users with Reviews</h1>
+<div>
+    <ul>
+        <li th:each="user : ${users}">
+            <p>Username: <span th:text="${user.username}"></span></p>
+            <p>View Reviews: <a th:href="@{/reviews/user/{id}(id=${user.id})}">Click Here</a></p>
+        </li>
+    </ul>
+</div>
+<div>
+    <ul th:each="user : ${users}">
+        <li th:text="${user.username}"></li>
+    </ul>
+</div>
+<a href="/">Back to Home</a>
+</body>
+</html>

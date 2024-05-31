@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Movies</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Movies</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Rotten Tomatoes Link</th>
+        <th>Critic Name</th>
+        <th>Top Critic</th>
+        <th>Publisher Name</th>
+        <th>Review Type</th>
+        <th>Review Score</th>
+        <th>Review Date</th>
+        <th>Review Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="movie : ${movies}">
+        <td th:text="${movie.movieId}"></td>
+        <td th:text="${movie.rottenTomatoesLink}"></td>
+        <td th:text="${movie.criticName}"></td>
+        <td th:text="${movie.topCritic ? 'Yes' : 'No'}"></td>
+        <td th:text="${movie.publisherName}"></td>
+        <td th:text="${movie.reviewType}"></td>
+        <td th:text="${movie.reviewScore}"></td>
+        <td th:text="${movie.reviewDate}"></td>
+        <td th:text="${movie.reviewContent}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/">Back to Home</a>
+</body>
+</html>

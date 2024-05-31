@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reviews List</title>
+</head>
+<body>
+<h1>List of Reviews</h1>
+<div>
+    <ul th:each="review : ${reviews}">
+        <li>Review ID: <span th:text="${review.id}"></span>, User: <span th:text="${review.user.username}"></span>, Movie ID: <span th:text="${review.movieId}"></span>, Rating: <span th:text="${review.rating}"></span>, Status: <span th:text="${review.status}"></span></li>
+    </ul>
+</div>
+<div>
+    <ul th:each="user : ${users}">
+        <li th:text="${user.username}"></li>
+    </ul>
+</div>
+<a href="/">Back to Home</a>
+</body>
+</html>

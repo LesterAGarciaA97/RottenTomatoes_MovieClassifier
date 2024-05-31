@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Welcome to the Movie Review Application</h1>
+<nav>
+    <ul>
+        <li><a th:href="@{/users/register}">Register User</a></li>
+        <li><a th:href="@{/users}">List Users</a></li>
+        <li><a th:href="@{/reviews}">Submit Review</a></li>
+        <li><a th:href="@{/movies}">List Movies</a></li>
+        <li>
+            <form th:action="@{/reviews/user}" method="get">
+                Enter User ID: <input type="text" name="userId" />
+                <button type="submit">View Reviews</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
